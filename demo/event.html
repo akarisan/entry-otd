@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+   
+   <main>
+       <h1>ゆるふわ大会<span>powerd by entry otd.</span></h1>
+       <div class="entryform">
+           <form>
+               <div class="form-control">
+                   <label>クラス</label>
+                   <div class="radio-group">
+                       <input type="radio" name="class" id="long">
+                       <label for="long">Long[10]</label>
+                       <input type="radio" name="class" id="middle">
+                       <label for="middle">Middle[8]</label>
+                       <input type="radio" name="class" id="short">
+                       <label for="short">Short[12]</label>
+                   </div>
+               </div>
+               <div class="form-control">
+                   <label>名前</label>
+                   <input type="text">
+               </div>
+               <div class="form-control">
+                   <label>所属</label>
+                   <input type="text">
+               </div>
+               <div class="form-control">
+                   <label>電話番号</label>
+                   <input type="text">
+               </div>
+               
+               <div class="form-control" style="text-align: center;">
+                   <button class="button --lg --green">申し込む</button>
+               </div>
+           </form>
+       </div>
+   </main>
+   
+   <style>
+       main {
+           max-width: 500px;
+           margin: 0 auto;
+           padding: 10px;
+           height: auto;
+       }
+       h1 {
+           color: var(--green);
+           display: flex;
+           align-items: flex-start;
+           flex-direction: column;
+           font-size: 1.1rem;
+       }
+       h1 span {
+           font-size: 0.8rem;
+           margin-left: auto;
+           font-weight: normal;
+       }
+       
+       .entryform {
+           background-color: white;
+           border-radius: 10px;
+           padding: 0px 10px;
+       }
+       
+       .form-control {
+           clear: both;
+           display: block;
+           margin: 20px 0px;
+           padding: 20px 10px;
+       }
+       .form-control > label {
+           display: block;
+       }
+       
+       .radio-group {
+           display: block;
+           margin-bottom: 1.2rem;
+       }
+       input[type=radio] {
+           display: none;
+       }
+       input[type=radio] + label {
+           display: inline-block;
+           float: left;
+           padding: 5px 15px;
+           margin: 5px;
+           border: 1px var(--orange) solid;
+           color: var(--orange);
+           font-weight: bold;
+           border-radius: 5px;
+       }
+       input[type=radio]:checked + label {
+           background-color: var(--orange);
+           color: var(--whitesmoke);
+       }
+       
+       input[type=text] {
+           width: 100%;
+           font-size: 1.5rem;
+           border-radius: 5px;
+           border: 1px var(--black) solid;
+       }
+    </style>
+    
+</body>
+</html>
