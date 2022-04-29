@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+        <h1>ゆるふわ大会<span>powerd by entry otd.</span></h1>
+        <div class="form">
+            <div id="classList" class="form-control">
+                <label>クラス</label>
+                <div class="flex">
+                    <input type="text" placeholder="クラス名">
+                    <input type="number" placeholder="人数上限">
+                    <button onclick="alert('試作だから動かないよ♡')">＋</button>
+                </div>
+                <div class="flex">
+                    <input type="text" class="no-outline" value="Long">
+                    <input type="number" class="no-outline" value="10">
+                    <button onclick="if(confirm('削除してもよろしいですか？'),true,false);">－</button>
+                </div>
+            </div>
+            <div class="form-control">
+                <h2>Entry List</h2>
+                <ul>
+                    <li onclick="this.classList.toggle('checked');
+                        ">
+                        <div class="class">Long</div>
+                        <div class="name">山田太郎(ゆるふわOLC)</div>
+                        <div class="email">exmaple@exmaple.com</div>
+                    </li>
+                    <li onclick="this.classList.toggle('checked');
+                        ">
+                        <div class="class">Long</div>
+                        <div class="name">田中次郎(ゆるふわOLC)</div>
+                        <div class="email">exmaple@exmaple.com</div>
+                    </li>
+                    <li onclick="this.classList.toggle('checked');
+                        ">
+                        <div class="class">Short</div>
+                        <div class="name">佐藤三郎(ゆるふわOLC)</div>
+                        <div class="email">exmaple@exmaple.com</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        main {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+            height: auto;
+        }
+
+        h1 {
+            color: var(--green);
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            font-size: 1.1rem;
+        }
+
+        h1 span {
+            font-size: 0.8rem;
+            margin-left: auto;
+            font-weight: normal;
+        }
+
+        h2 {
+            color: var(--gray);
+        }
+
+        .flex {
+            display: flex;
+            padding-bottom: 10px;
+        }
+
+        .flex:last-child {
+            padding-bottom: 0;
+        }
+
+        input[type=text]+button,
+        input[type=number]+button {
+            font-size: 1rem;
+            padding: 1px 10px;
+            border: none
+        }
+
+        input[type=text].no-outline,
+        input[type=number].no-outline {
+            border: none;
+        }
+
+        input[type=text].no-outline+button,
+        input[type=number].no-outline+button {
+            padding: 0px 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 10px;
+        }
+
+        ul li {
+            box-shadow: 0px 0px 10px var(--whitesmoke);
+            margin-bottom: 10px 0px;
+            border-radius: 5px;
+            display: grid;
+            margin-bottom: 10px;
+            grid-template-columns: 4rem 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px 5px;
+            grid-template-areas:
+                "class name"
+                "class email";
+        }
+        
+        ul li.checked {
+            background-color: var(--whitesmoke);
+        }
+
+        ul li div {
+            padding: 0px 5px;
+            color: var(--gray);
+        }
+
+        .class {
+            grid-area: class;
+            background-color: var(--orange);
+            font-weight: bold;
+            color: var(--whitesmoke);
+            border-radius: 5px 0 0 5px;
+            word-break: break-all;
+            display: flex;
+            align-items: center;
+        }
+        
+        ul li.checked .class {
+            background-color: var(--whitesmoke);
+            color: var(--gray);
+        }
+
+        .email {
+            grid-area: email;
+            font-size: 0.8rem;
+        }
+
+        .name {
+            grid-area: name;
+        }
+
+    </style>
+
+</body>
+
+</html>
